@@ -2,6 +2,8 @@ import React, { useState, useCallback } from 'react';
 import './App.css';
 
 import SearchBar from "../Searchbar/Search"
+import SearchResults from '../Searchresults/Results';
+import Playlist from '../Playlist/Playlist';
 
 function App() {
   return (
@@ -9,7 +11,10 @@ function App() {
       <h1>Jammming</h1>
       <SearchBar />
       <div className='App-playlist'>
+        <SearchResults />
+        <Playlist />
 
+      
       </div>
     </div>
   );

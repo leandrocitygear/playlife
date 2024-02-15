@@ -23,4 +23,8 @@ margin: auto 10px;
 
 }
 
+.App-playlist {
+  display: flex;
+  justify-content: space-between;
+}
 
