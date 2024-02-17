@@ -3,9 +3,17 @@ import Track from "../Track/Track";
 import './Tracklist.css';
 
 
-const Tracklist = (props) => {
+const Tracklist = ({ tracks }) => {
     return (
         <div className="Tracklist">
+            {tracks.map((track) => {
+                return (
+                    <Track 
+                    key={track.id}
+                    track={track}
+                    />
+                )
+            })}
 
         </div>
     )
