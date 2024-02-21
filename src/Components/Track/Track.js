@@ -1,13 +1,19 @@
 import React from "react";
 import './Track.css';
 
-const Track = ({ track }) => {
+const Track = (props) => {
+    const { track } = props;
+
+    if (!track) {
+        return null;
+    }
+    
     return (
         <div className="Track">
             <div className="Track-information">
-            <h3>{track.name}</h3>
+            <h3>{props.track.name}</h3>
         <p>
-          {track.artist} | {track.album}
+          {props.track.artist} | {props.track.album}
         </p>
             </div>
 

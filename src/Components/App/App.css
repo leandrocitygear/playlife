@@ -12,6 +12,9 @@ html, body, #root {
   background-repeat: no-repeat;
   padding: 0px;
   /* text-align: center; */
+  background-color: plum;
+  overflow-y: scroll;
+  color: white;
 }
 
 h1 {

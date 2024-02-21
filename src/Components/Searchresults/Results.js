@@ -7,7 +7,7 @@ const SearchResults = (props) => {
 return (
     <div className="SearchResults">
         <h2>Results</h2>
-        <Tracklist />
+        <Tracklist tracks={props.searchResults}/>
     </div>
 );
 };
