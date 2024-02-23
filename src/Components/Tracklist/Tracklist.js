@@ -4,7 +4,7 @@ import './Tracklist.css';
 
 
 const Tracklist = (props) => {
-    const { playlistTracks} = props;
+    const { playlistTracks, onAdd, searchResults} = props;
 
 if (!props.tracks) {
     return null;
@@ -17,6 +17,7 @@ if (!props.tracks) {
                     <Track 
                     key={track.id}
                     track={track}
+                    onAdd={onAdd}
                     />
                 )
             })}

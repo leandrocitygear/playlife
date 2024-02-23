@@ -1,7 +1,7 @@
 .SearchResults {
     width: 30%;
     height: 330px;
-    /* overflow-y: scroll; */
+    overflow-y: scroll;
     padding: .88rem;
     /* background-color: rgba(36, 50, 110, 0.7); */
     background: transparent;
@@ -9,6 +9,7 @@
     border: solid 1px #fff;
     margin-left: 50px;
     /* color: white; */
+
   }
   
   /* ::-webkit-scrollbar {

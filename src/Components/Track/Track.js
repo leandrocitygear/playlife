@@ -2,7 +2,11 @@ import React from "react";
 import './Track.css';
 
 const Track = (props) => {
-    const { track } = props;
+    const { track, onAdd } = props;
+
+    const handleAddClick = () => {
+        onAdd(track);
+    };
 
     if (!track) {
         return null;
@@ -16,6 +20,9 @@ const Track = (props) => {
           {props.track.artist} | {props.track.album}
         </p>
             </div>
+            <button className="Track-action" onClick={handleAddClick}>
+                +
+            </button>
 
         </div>
     )
