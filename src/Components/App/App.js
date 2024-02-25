@@ -14,58 +14,84 @@ const [searchResults, setSearchResults] = useState([
     name: 'Shiver',
     artist: 'Coldplay',
     album: 'Parashutes',
+    uri: 'spotify:track:1',
   },
   {
     id: '2',
     name: 'Time and place',
     artist: 'Last Dinosaurs',
     album: 'In a million years',
+    uri: 'spotify:track:2',
   },
   {
     id: '3',
     name: 'On track',
     artist: 'Tame impala',
     album: 'The slow rush',
+    uri: 'spotify:track:3',
   },
   {
     id: '4',
     name: 'jdjd',
     artist: 'jdjjjjj',
     album: 'eee',
+    uri: 'spotify:track:4',
   },
 ]);
-const [playlistName, setPlaylistName] = useState('New Playlist money');
+const [playlistName, setPlaylistName] = useState('New Playlist');
 const [playlistTracks, setPlaylistTracks] = useState([
   {
     id: '1',
     name: 'Shiver',
     artist: 'Coldplay',
     album: 'Parashutes',
+    uri: 'spotify:track:1',
   },
   {
     id: '2',
     name: 'Time and place',
     artist: 'Last Dinosaurs',
     album: 'In a million years',
+    uri: 'spotify:track:2',
   },
   {
     id: '3',
     name: 'On track',
     artist: 'Tame impala',
     album: 'The slow rush',
+    uri: 'spotify:track:3',
   },
   {
     id: '4',
-    name: 'hdhdh',
-    artist: 'fdfdf',
-    album: 'fdfd',
-  }
+    name: 'jdjd',
+    artist: 'jdjjjjj',
+    album: 'eee',
+    uri: 'spotify:track:4',
+  },
 ]);
 
 const addTracksToPlaylist = (track) => {
-  if (playlistTracks.some((savedTracks) => savedTracks.id === track.id)) {
-setPlaylistTracks([...playlistTracks, track])
-  }
+  if (playlistTracks.some((savedTracks) => savedTracks.id === track.id)) 
+  return
+
+setPlaylistTracks((prevTracks) => [...prevTracks, track])
+};
+
+const removeTracksFromPlaylist = (track) => {
+  setPlaylistTracks((prevTracks) => prevTracks.filter((currentTracks) => currentTracks.id !== track.id));
+};
+
+const updatedPlaylistName = (name) => {
+  setPlaylistName(name);
+};
+
+const savePlaylist = () => {
+  const trackUris = playlistTracks.map((track) => track.uri);
+  savePlaylist(playlistName, trackUris).then(() => {
+    setPlaylistName('New Playlist');
+    setPlaylistTracks([]);
+  })
+
 }
 
   return (
@@ -78,8 +104,10 @@ setPlaylistTracks([...playlistTracks, track])
         playlistName={playlistName}
         setPlaylistName={setPlaylistName}
         playlistTracks={playlistTracks}
+        onRemove={removeTracksFromPlaylist}
+        onNameChange={updatedPlaylistName}
+        onSave={savePlaylist}
         />
-
       
       </div>
     </div>
