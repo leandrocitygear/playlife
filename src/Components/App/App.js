@@ -6,38 +6,10 @@ import SearchResults from '../Searchresults/Results';
 import Playlist from '../Playlist/Playlist';
 import Tracklist from '../Tracklist/Tracklist';
 import Track from '../Track/Track';
+import Spotify from '../../util/Spotify';
 
 function App() {
-const [searchResults, setSearchResults] = useState([
-  {
-    id: '1',
-    name: 'Shiver',
-    artist: 'Coldplay',
-    album: 'Parashutes',
-    uri: 'spotify:track:1',
-  },
-  {
-    id: '2',
-    name: 'Time and place',
-    artist: 'Last Dinosaurs',
-    album: 'In a million years',
-    uri: 'spotify:track:2',
-  },
-  {
-    id: '3',
-    name: 'On track',
-    artist: 'Tame impala',
-    album: 'The slow rush',
-    uri: 'spotify:track:3',
-  },
-  {
-    id: '4',
-    name: 'jdjd',
-    artist: 'jdjjjjj',
-    album: 'eee',
-    uri: 'spotify:track:4',
-  },
-]);
+const [searchResults, setSearchResults] = useState([]);
 const [playlistName, setPlaylistName] = useState('New Playlist');
 const [playlistTracks, setPlaylistTracks] = useState([
   {
@@ -70,6 +42,10 @@ const [playlistTracks, setPlaylistTracks] = useState([
   },
 ]);
 
+const search = useCallback((term) => {
+  Spotify.search(term).then(setSearchResults)
+}, []);
+
 const addTracksToPlaylist = (track) => {
   if (playlistTracks.some((savedTracks) => savedTracks.id === track.id)) 
   return
@@ -97,7 +73,7 @@ const savePlaylist = () => {
   return (
     <div className="App">
       <h1>Jammming</h1>
-      <SearchBar />
+      <SearchBar onSearch={search}/>
       <div className='App-playlist'>
         <SearchResults searchResults={searchResults} onAdd={addTracksToPlaylist}/>
         <Playlist 

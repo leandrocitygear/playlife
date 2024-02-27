@@ -2,7 +2,7 @@ import "./Search.css";
 import React, {useState, useCallback} from "react";
 
 const SearchBar = (props) => {
-    const [input, setInput] = useState("");
+    const [term, setTerm] = useState("");
     return (
         <div className="SearchBar">
             <input placeholder="Enter a Song Name" />
