@@ -1,19 +1,18 @@
-import React from "react";
+import React, { useCallback } from "react";
 import './Track.css';
 
 const Track = (props) => {
-    const { track, onAdd, onRemove, isRemoval } = props;
 
-    const handleAddClick = () => {
-        onAdd(track);
-    };
+    const handleAddClick = useCallback((event) => {
+        props.onAdd(props.track);
+    }, [props.onAdd, props.track]);
 
-    const handleRemoveClick = () => {
-        onRemove(track);
-    };
+    const handleRemoveClick = useCallback((event) => {
+        props.onRemove(props.track);
+    }, [props.onRemove, props.track]);
 
     const renderAction = () => {
-        if (isRemoval) {
+        if (props.isRemoval) {
           return (
             <button className="Track-action" onClick={handleRemoveClick}>
               -
@@ -27,10 +26,6 @@ const Track = (props) => {
         );
       };
 
-
-    if (!track) {
-        return null;
-    }
     
     return (
         <div className="Track">
@@ -42,7 +37,7 @@ const Track = (props) => {
             </div>
         {renderAction()}
         </div>
-    )
+    );
 };
 
 

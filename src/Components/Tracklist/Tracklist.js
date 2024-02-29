@@ -3,30 +3,24 @@ import Track from "../Track/Track";
 import './Tracklist.css';
 
 
-const Tracklist = (props) => {
-    const { playlistTracks, onAdd, onRemove, isRemoval} = props;
-
-if (!props.tracks) {
-    return null;
-}
-
+const TrackList = (props) => {
 
     return (
-        <div className="Tracklist">
+        <div className="TrackList">
             {props.tracks.map((track) => {
                 return (
                     <Track 
                     key={track.id}
                     track={track}
-                    onAdd={onAdd}
-                    onRemove={onRemove}
-                    isRemoval={isRemoval}
+                    onAdd={props.onAdd}
+                    onRemove={props.onRemove}
+                    isRemoval={props.isRemoval}
                     />
-                )
+                );
             })}
 
         </div>
-    )
-}
+    );
+};
 
-export default Tracklist;
+export default TrackList;
