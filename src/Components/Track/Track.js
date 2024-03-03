@@ -11,6 +11,7 @@ const Track = (props) => {
         props.onRemove(props.track);
     }, [props.onRemove, props.track]);
 
+
     const renderAction = () => {
         if (props.isRemoval) {
           return (
