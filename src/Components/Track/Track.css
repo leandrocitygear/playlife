@@ -4,18 +4,18 @@
     border-bottom: 1px solid rgba(256, 256, 256, 0.8);
   }
   
-  .Track-action {
+  .Track-actionAdd {
     cursor: pointer;
     padding: .5rem;
-    font-size: 1.05rem;
+    font-size: 1.25rem;
     transition: color .25s;
     border: 0px;
     background-color: rgba(0, 0, 0, 0);
     color: #fff;
   }
   
-  .Track-action:hover {
-    color: rgba(265, 265, 265, .5);
+  .Track-actionAdd:hover {
+    color: #1DB954;
   }
   
   .Track-information {
@@ -34,4 +34,22 @@
     font-size: .83rem;
     font-weight: 300;
     color: rgba(256, 256, 256, 0.8);
+  }
+
+  .Track-actionRem {
+    cursor: pointer;
+    padding: .5rem;
+    font-size: 1.25rem;
+    transition: color .25s;
+    border: 0px;
+    background-color: rgba(0, 0, 0, 0);
+    color: #fff;
+  }
+  
+  .Track-actionRem:hover {
+    color: red;
+  }
+
+  .Track-actionAdd:focus {
+    color: #1DB954;
   }

@@ -6,11 +6,12 @@
     width: 30%;
     height: 330px;
     padding: .88rem;
-    /* background-color: rgba(1, 12, 63, 0.7); */
+    /* background-color: rgba(205, 233, 221, 0.3); */
     background: transparent;
     box-shadow: 0 4px 2px 2px #000000;
     border: solid 1px white;
     margin-right: 50px;
+    backdrop-filter: blur(2px);
   }
   
   .Playlist input {

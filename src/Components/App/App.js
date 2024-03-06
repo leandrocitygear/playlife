@@ -20,6 +20,7 @@ const addTracksToPlaylist = useCallback((track) => {
   return;
 
 setPlaylistTracks((prevTracks) => [...prevTracks, track]);
+
 }, [playlistTracks]);
 
 const removeTracksFromPlaylist = useCallback((track) => {

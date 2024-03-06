@@ -9,13 +9,13 @@
     border: solid 1px #fff;
     margin-left: 50px;
     /* color: white; */
-
+    backdrop-filter: blur(2px);
   }
   
-  /* ::-webkit-scrollbar {
+  ::-webkit-scrollbar {
       width: 0px;
       background: transparent;
-  } */
+  }
   
   @media only screen and (max-width: 1020px) {
     .SearchResults {
