@@ -1,5 +1,5 @@
 const clientId = '4acf430cd5cf4fb29da18b378241da72';
-const redirectUri = 'http://localhost:3000';
+const redirectUri = 'https://playlife.netlify.app/';
 
 let accessToken;
 
