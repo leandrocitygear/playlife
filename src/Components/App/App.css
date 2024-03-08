@@ -1,6 +1,5 @@
 html, body, #root {
   height: 100%;
-  
 }
 
 
@@ -10,21 +9,17 @@ html, body, #root {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 0 3% 0% 3%;
-  /* text-align: center; */
-  background-color: plum;
+  padding: 0 3% 0 3%;
+  background-color: #3B5159;
   overflow-y: scroll;
   color: white;
-  /* border: solid red; */
 }
 
 h1 {
-  /* border: solid blue; */
   padding: 0px;
 margin: auto 10px;
   font-size: 60px;
   color: white;
-
 }
 
 .App-playlist {

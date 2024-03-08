@@ -49,7 +49,3 @@
   .Track-actionRem:hover {
     color: red;
   }
-
-  .Track-actionAdd:focus {
-    color: #1DB954;
-  }
