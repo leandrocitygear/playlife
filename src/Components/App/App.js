@@ -42,7 +42,7 @@ const savePlaylist = useCallback(() => {
 
   return (
     <div className="App">
-      <h1>Jammming</h1>
+      <h1>Playlife</h1>
       <SearchBar onSearch={search}/>
       <div className='App-playlist'>
         <SearchResults searchResults={searchResults} onAdd={addTracksToPlaylist}/>

@@ -10,7 +10,7 @@
     background: transparent;
     box-shadow: 0 4px 2px 2px #000000;
     border: solid 1px white;
-    margin-right: 50px;
+    /* margin-right: 50px; */
     backdrop-filter: blur(2px);
   }
   
