@@ -1,4 +1,4 @@
-const clientId = '4acf430cd5cf4fb29da18b378241da72';
+const clientId = `${process.env.REACT_APP_KEY}`;
 const redirectUri = 'https://playlife.netlify.app/';
 
 let accessToken;
